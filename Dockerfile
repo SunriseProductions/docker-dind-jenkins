@@ -25,6 +25,8 @@ RUN apt-get install -y --no-install-recommends openjdk-7-jdk
 
 # Set password for the jenkins user (you may want to alter this).
 RUN echo "root:jenkins" | chpasswd
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # Standard SSH port
 EXPOSE 22
