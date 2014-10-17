@@ -23,13 +23,8 @@ RUN mkdir -p /var/run/sshd
 # Install JDK 7 (latest edition)
 RUN apt-get install -y --no-install-recommends openjdk-7-jdk
 
-# Add user jenkins to the image
-RUN adduser --quiet -ou 0 -g 0 jenkins
-RUN groupadd docker
-RUN gpasswd -a jenkins docker
-
 # Set password for the jenkins user (you may want to alter this).
-RUN echo "jenkins:jenkins" | chpasswd
+RUN echo "root:jenkins" | chpasswd
 
 # Standard SSH port
 EXPOSE 22
