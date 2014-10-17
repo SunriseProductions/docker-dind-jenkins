@@ -84,4 +84,4 @@ popd >/dev/null
 rm -rf /var/run/docker.pid
 
 docker -d &
-/usr/sbin/sshd -D &
+/usr/sbin/sshd -D
