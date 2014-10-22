@@ -32,5 +32,4 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 EXPOSE 22
 
 # Define additional metadata for our image.
-VOLUME /var/lib/docker
 CMD ["wrapdocker"]
